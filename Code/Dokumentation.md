@@ -1,3 +1,32 @@
+# Aufgabe 12.1: MQTT-Client für SPS
+
+## Ziel des Versuchs
+
+Ziel dieses Versuchs ist es, eine Beckhoff-SPS über das MQTT-Protokoll mit einem MQTT-Broker zu verbinden und Daten zu veröffentlichen. Als Beispiel wird ein Teamname einmalig an einen MQTT-Topic übermittelt. Die Programmierung erfolgt in TwinCAT 3 mit dem Funktionsbaustein `FB_IotMqttClient`.
+
+---
+
+## Aufbau und Funktionsweise des Programms
+
+Das SPS-Programm besteht aus einem **Deklarationsbereich**, in dem Variablen definiert werden, und einem **Ausführungsbereich**, in dem die Programmlogik implementiert ist.
+
+### 1. Initialisierung und MQTT-Verbindung
+
+Zunächst wird eine Instanz des MQTT-Clients erstellt und mit den notwendigen Parametern konfiguriert:
+
+- **IP-Adresse des MQTT-Brokers** (`sHostName`) wird auf eine konkrete IP gesetzt.
+- Der **Port** (`nHostPort`) ist auf 1883 festgelegt, was dem Standard für unverschlüsseltes MQTT entspricht.
+- Weitere Einstellungen beinhalten ein **Topic-Präfix**, einen **Client-ID-Namen**, sowie **Benutzername** und **Passwort**.
+- Anschließend wird der MQTT-Client mit dem Befehl `Execute(bConnect := TRUE)` aktiviert, wodurch eine Verbindung aufgebaut wird.
+
+### 2. Bedingtes Senden einer Nachricht
+
+Nachdem die Verbindung erfolgreich aufgebaut wurde (d. h. der MQTT-Client ist verbunden), prüft das Programm, ob die Verbindung besteht.
+
+Sobald die Verbindung aktiv ist, wird eine Zeichenkette mit Namen (Teammitglieder) über das MQTT-Protokoll an den Broker gesendet. Das Ziel-Topic ist dabei 'aut/gruppe1/names' zusammengesetzt aus dem konfigurierten Präfix (`aut/gruppe1/`) und einem statischen Teil (`names`). 
+![Twincad_oben]("C:\Users\valen\OneDrive - mci4me.at\Documents\Bachelor_Mechatronik\4._Semester\Automatisierungstechnik\Final_Automatisierung\Code\Screenshots")
+
+
 # MQTT-Datenlogger & Visualisierung – Projektübersicht
 
 ## 📡 MQTT-Datenempfang (`getmqttdata.py`)
