@@ -24,7 +24,7 @@ Zunächst wird eine Instanz des MQTT-Clients erstellt und mit den notwendigen Pa
 Nachdem die Verbindung erfolgreich aufgebaut wurde (d. h. der MQTT-Client ist verbunden), prüft das Programm, ob die Verbindung besteht.
 
 Sobald die Verbindung aktiv ist, wird eine Zeichenkette mit Namen (Teammitglieder) über das MQTT-Protokoll an den Broker gesendet. Das Ziel-Topic ist dabei 'aut/gruppe1/names' zusammengesetzt aus dem konfigurierten Präfix (`aut/gruppe1/`) und einem statischen Teil (`names`). 
-![Twincad oben](Screenshots/twincad_oben.png)
+![Twincad oben](Screenshots/TwinCad_oben.png)
 
 
 
