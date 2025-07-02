@@ -8,6 +8,7 @@ Ziel dieses Versuchs ist es, eine Beckhoff-SPS über das MQTT-Protokoll mit eine
 
 ## Aufbau und Funktionsweise des Programms
 Der Deklarationsbereich wird folgendermaßen gefüllt:
+
 ![Twincad oben](Screenshots/TwinCad_oben.png)
 
 Dann wird zunächst eine Instanz des MQTT-Clients erstellt und mit den notwendigen Parametern konfiguriert:
@@ -21,6 +22,7 @@ Dann wird zunächst eine Instanz des MQTT-Clients erstellt und mit den notwendig
 Nachdem die Verbindung erfolgreich aufgebaut wurde (d. h. der MQTT-Client ist verbunden), prüft das Programm, ob die Verbindung besteht.
 
 Sobald die Verbindung aktiv ist, wird eine Zeichenkette mit Namen (Teammitglieder) über das MQTT-Protokoll an den Broker gesendet. Das Ziel-Topic ist dabei `aut/gruppe1/names`.
+
 ![Twincad unten](Screenshots/TwinCad_unten.png)
 
 
